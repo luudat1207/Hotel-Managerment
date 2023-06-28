@@ -63,6 +63,26 @@ namespace Motel_Managerment_Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gmail_icon {
+            get {
+                object obj = ResourceManager.GetObject("gmail_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_register {
+            get {
+                object obj = ResourceManager.GetObject("icon_register", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap panelLogin {
             get {
                 object obj = ResourceManager.GetObject("panelLogin", resourceCulture);
@@ -86,6 +106,16 @@ namespace Motel_Managerment_Client.Properties {
         internal static System.Drawing.Bitmap resetpassword {
             get {
                 object obj = ResourceManager.GetObject("resetpassword", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap resetsuccedfully {
+            get {
+                object obj = ResourceManager.GetObject("resetsuccedfully", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

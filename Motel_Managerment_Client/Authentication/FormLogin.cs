@@ -77,5 +77,12 @@ namespace Motel_Managerment_Client
             this.Hide();
             fvc.Show();
         }
+
+        private void linkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Authentication.FormRegisterUser fvc = new Authentication.FormRegisterUser();
+            this.Hide();
+            fvc.Show();
+        }
     }
 }

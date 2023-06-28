@@ -174,6 +174,7 @@
             this.linkRegister.TabIndex = 24;
             this.linkRegister.TabStop = true;
             this.linkRegister.Text = "Resgistred Here";
+            this.linkRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRegister_LinkClicked);
             // 
             // label3
             // 

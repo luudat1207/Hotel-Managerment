@@ -9,7 +9,7 @@ namespace Motel_Managerment_API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private DBNhaTroContext _context;
+        private DBNhaTroContext _context = new DBNhaTroContext();
 
         [HttpGet("GetAllUsers")]
         public IActionResult GetAllUsers()
@@ -40,14 +40,11 @@ namespace Motel_Managerment_API.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateUsers(string? username, User user)
+        public IActionResult UpdateUsers( User user)
         {
             try
             {
-                User tmpuser = _context.Users.FirstOrDefault(x => x.Username.Equals(username));
-                if (user == null) return NoContent();
-                user.Password = tmpuser.Password;
-                _context.Users.Update(user);
+                _context.Entry<User>(user).State = EntityState.Modified;
                 _context.SaveChanges();
                 return Ok("update success");
             }
@@ -56,5 +53,21 @@ namespace Motel_Managerment_API.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpPost]
+        public IActionResult CreateUsers(User user)
+        {
+            try
+            {
+                _context.Users.Add(user);
+                _context.SaveChanges();
+                return Ok("Create success");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Motel_Managerment_API.Models;
+using Motel_Managerment_Client.Logics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Motel_Managerment_Client
 {
     public partial class FormResetPassword : Form
     {
+        UserManagerment userManagerment = new UserManagerment();
         string username = FormValidationCode.to;
         public FormResetPassword()
         {
@@ -22,7 +25,19 @@ namespace Motel_Managerment_Client
         {
             if(textBoxPass1.Text == textBoxPass2.Text)
             {
+                User u = new User();
+                u.Username = username;
+                u.Password = textBoxPass2.Text;
+                u.Role = 1;
+                userManagerment.UpdateUserByUserName(u);
 
+                FormAlertChangePassword facp = new FormAlertChangePassword();
+                this.Hide();
+                facp.Show();
+            }
+            else
+            {
+                MessageBox.Show("mật khẩu không trùng nhau!");
             }
         }
     }

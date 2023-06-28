@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace Motel_Managerment_Client.Logics
 {
@@ -36,9 +37,25 @@ namespace Motel_Managerment_Client.Logics
             {
                 PropertyNameCaseInsensitive = true
             };
-            List<User> listusers = JsonSerializer.Deserialize<List<User>>(strdata, options).ToList();
+            List<User> listusers = System.Text.Json.JsonSerializer.Deserialize<List<User>>(strdata, options).ToList();
             return listusers;
         }
 
+        public async Task<User> UpdateUserByUserName(User user)
+        {
+            var json = JsonConvert.SerializeObject(user);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PutAsync($"{UserApiUrl}?username={user.Username}", content);
+
+            return user;
+        }
+        public async Task<User> CreateUser(User user)
+        {
+            var json = JsonConvert.SerializeObject(user);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(UserApiUrl, content);
+
+            return user;
+        }
     }
 }
