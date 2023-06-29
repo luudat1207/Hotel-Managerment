@@ -37,7 +37,6 @@ namespace Motel_Managerment_Client
             else
             {
                 MessageBox.Show("the User name or password your entered incorrect!");
-                textBoxUsername.Clear();
                 textBoxPassword.Clear();
                 textBoxUsername.Focus();
             }
