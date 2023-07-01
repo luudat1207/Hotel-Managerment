@@ -12,9 +12,24 @@ namespace Motel_Managerment_Client
 {
     public partial class MIDForm : Form
     {
+        public event EventHandler DangXuat;
+
         public MIDForm()
         {
             InitializeComponent();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DangXuat(this, new EventArgs());
+        }
+
+        private void thôngTinChủNhàToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormChuNha frm = new FormChuNha();
+            //frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

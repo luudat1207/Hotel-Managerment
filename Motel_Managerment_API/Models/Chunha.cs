@@ -16,6 +16,6 @@ namespace Motel_Managerment_API.Models
         public string? DiaChi { get; set; }
         public string? GhiChu { get; set; }
 
-        public virtual ICollection<Hopdong> Hopdongs { get; set; }
+        public virtual ICollection<Hopdong>? Hopdongs { get; set; }
     }
 }
