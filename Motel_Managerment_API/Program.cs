@@ -27,6 +27,7 @@ namespace Motel_Managerment_API
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new ChuNhaMapping());
+                mc.AddProfile(new PhongTroMapping());
             });
             IMapper mapper = mapperConfig.CreateMapper();
             builder.Services.AddSingleton(mapper);

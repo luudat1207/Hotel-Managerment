@@ -28,7 +28,13 @@ namespace Motel_Managerment_Client
         {
             this.Hide();
             FormChuNha frm = new FormChuNha();
-            //frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void thôngTinPhòngTrọToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormQuanLyPhongTro frm = new FormQuanLyPhongTro();
             frm.Show();
         }
     }

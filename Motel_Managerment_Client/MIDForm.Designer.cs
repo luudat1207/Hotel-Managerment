@@ -111,6 +111,7 @@
             this.thôngTinPhòngTrọToolStripMenuItem.Name = "thôngTinPhòngTrọToolStripMenuItem";
             this.thôngTinPhòngTrọToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
             this.thôngTinPhòngTrọToolStripMenuItem.Text = "Thông Tin Phòng Trọ";
+            this.thôngTinPhòngTrọToolStripMenuItem.Click += new System.EventHandler(this.thôngTinPhòngTrọToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -197,6 +198,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MIDForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhà trọ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
