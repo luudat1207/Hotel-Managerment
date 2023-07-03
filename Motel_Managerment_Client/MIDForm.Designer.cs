@@ -123,6 +123,7 @@
             this.tìnhTrạngPhòngTrọToolStripMenuItem.Name = "tìnhTrạngPhòngTrọToolStripMenuItem";
             this.tìnhTrạngPhòngTrọToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
             this.tìnhTrạngPhòngTrọToolStripMenuItem.Text = "Tình Trạng Phòng Trọ";
+            this.tìnhTrạngPhòngTrọToolStripMenuItem.Click += new System.EventHandler(this.tìnhTrạngPhòngTrọToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 

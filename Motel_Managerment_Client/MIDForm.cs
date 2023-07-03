@@ -37,5 +37,12 @@ namespace Motel_Managerment_Client
             FormQuanLyPhongTro frm = new FormQuanLyPhongTro();
             frm.Show();
         }
+
+        private void tìnhTrạngPhòngTrọToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormTinhTrangPhongTro frm = new FormTinhTrangPhongTro();
+            frm.Show();
+        }
     }
 }
