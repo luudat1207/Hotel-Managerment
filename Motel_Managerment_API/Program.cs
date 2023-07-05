@@ -30,6 +30,11 @@ namespace Motel_Managerment_API
                 mc.AddProfile(new PhongTroMapping());
                 mc.AddProfile(new TinhTrangMapping());
                 mc.AddProfile(new KhachThueMapping());
+                mc.AddProfile(new HopDongMapping());
+                mc.AddProfile(new HopDongMapping());
+                mc.AddProfile(new ChuNhaxHopDongMapping());
+                mc.AddProfile(new KhachThuexHopDongMapping());
+                mc.AddProfile(new PhongTroxHopDongMapping());
             });
             IMapper mapper = mapperConfig.CreateMapper();
             builder.Services.AddSingleton(mapper);

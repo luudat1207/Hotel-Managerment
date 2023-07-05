@@ -51,5 +51,12 @@ namespace Motel_Managerment_Client
             FormKhachThue frm = new FormKhachThue();
             frm.Show();
         }
+
+        private void lậpHợpĐồngThuêNhàToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLapHopDong frm = new FormLapHopDong();
+            frm.Show();
+        }
     }
 }

@@ -163,6 +163,7 @@
             this.lậpHợpĐồngThuêNhàToolStripMenuItem.Name = "lậpHợpĐồngThuêNhàToolStripMenuItem";
             this.lậpHợpĐồngThuêNhàToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.lậpHợpĐồngThuêNhàToolStripMenuItem.Text = "Lập Hợp Đồng Thuê Nhà";
+            this.lậpHợpĐồngThuêNhàToolStripMenuItem.Click += new System.EventHandler(this.lậpHợpĐồngThuêNhàToolStripMenuItem_Click);
             // 
             // quảnLýHóaĐươnToolStripMenuItem
             // 

@@ -120,8 +120,7 @@ namespace Motel_Managerment_Client
         {
             CCCDcu = textBoxCCCD.Text;
 
-            using (var context = new DBNhaTroContext())
-            {
+            
                 if (textBoxCCCD.Text == "") return;
                 if (MessageBox.Show("Bạn có muốn xóa [" + textBoxHoTen.Text + "] không ?", "Thông báo ",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -132,7 +131,7 @@ namespace Motel_Managerment_Client
                     XoaTrang();
                     KeyOpen(true);
                 }
-            }
+            
             loadData();
         }
 
