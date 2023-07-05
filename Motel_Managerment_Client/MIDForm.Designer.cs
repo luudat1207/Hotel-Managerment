@@ -151,6 +151,7 @@
             this.thôngTinKháchThuêToolStripMenuItem.Name = "thôngTinKháchThuêToolStripMenuItem";
             this.thôngTinKháchThuêToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.thôngTinKháchThuêToolStripMenuItem.Text = "Thông Tin Khách Thuê";
+            this.thôngTinKháchThuêToolStripMenuItem.Click += new System.EventHandler(this.thôngTinKháchThuêToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 

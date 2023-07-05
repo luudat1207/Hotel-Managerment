@@ -44,11 +44,32 @@ namespace Motel_Managerment_API.Controllers
         [Route("DeleteChuNhaById/{id}")]
         public IActionResult DeleteChuNhaById(int id)
         {
-            Chunha cn = _context.Chunhas.Where(x => x.Idcn == id).SingleOrDefault();
-            _context.Chunhas.Remove(cn);
-            _context.SaveChanges();
+            try
+            {
+                var chunhas = _context.Chunhas
+                    .Include(c => c.Hopdongs)
+                    .Where(x => x.Idcn == id).SingleOrDefault();
+                if (chunhas == null)
+                {
+                    return NotFound();
+                }
 
-            return Ok("delete success");
+                _context.Chunhas.Remove(chunhas);
+
+                foreach (var hopdongs in chunhas.Hopdongs.ToList())
+                {
+
+                    _context.Hopdongs.Remove(hopdongs);
+                }
+
+                _context.SaveChanges();
+
+                return Ok("delete success");
+            }
+            catch (Exception e)
+            {
+                return Conflict("There was an unknown error when performing data deletion.");
+            }
         }
 
         [HttpPost]

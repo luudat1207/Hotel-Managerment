@@ -52,15 +52,37 @@ namespace Motel_Managerment_API.Controllers
             return Ok(_mapper.Map<PhongTroDTO>(pt));
         }
 
+
         [HttpDelete]
         [Route("DeletePhongTroById/{id}")]
         public IActionResult DeletePhongTroById(string id)
         {
-            Phongtro pt = _context.Phongtros.Where(x => x.MaPhong.Equals(id)).SingleOrDefault();
-            _context.Phongtros.Remove(pt);
-            _context.SaveChanges();
+            try
+            {
+                var phongtros = _context.Phongtros
+                    .Include(c => c.Hopdongs)
+                    .Where(x => x.MaPhong.Equals(id)).SingleOrDefault();
+                if (phongtros == null)
+                {
+                    return NotFound();
+                }
 
-            return Ok("delete success");
+                _context.Phongtros.Remove(phongtros);
+
+                foreach (var hopdongs in phongtros.Hopdongs.ToList())
+                {
+                   
+                    _context.Hopdongs.Remove(hopdongs);
+                }
+
+                _context.SaveChanges();
+
+                return Ok("delete success");
+            }
+            catch (Exception e)
+            {
+                return Conflict("There was an unknown error when performing data deletion.");
+            }
         }
 
         [HttpPost]
