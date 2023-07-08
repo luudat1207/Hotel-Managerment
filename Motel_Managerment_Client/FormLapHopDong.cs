@@ -65,8 +65,7 @@ namespace Motel_Managerment_Client
 
         private async void textBoxTimKiem_TextChanged(object sender, EventArgs e)
         {
-            using (var context = new DBNhaTroContext())
-            {
+            
 
                 if (string.IsNullOrEmpty(textBoxTimKiem.Text))
                 {
@@ -78,7 +77,6 @@ namespace Motel_Managerment_Client
                     dataGridViewHopDong.DataSource = await dongManagerment.GetAllHopDongByInfor(checkBoxHopDongKetThuc.Checked, textBoxTimKiem.Text);
                 }
 
-            }
         }
 
         private void checkBoxHopDongKetThuc_CheckedChanged(object sender, EventArgs e)

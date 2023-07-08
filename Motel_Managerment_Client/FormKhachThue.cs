@@ -237,6 +237,8 @@ namespace Motel_Managerment_Client
         private void buttonKetThuc_Click(object sender, EventArgs e)
         {
             this.Close();
+            MIDForm mf = new MIDForm();
+            mf.Show();
 
         }
 

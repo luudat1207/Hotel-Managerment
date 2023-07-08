@@ -12,8 +12,6 @@ namespace Motel_Managerment_Client
 {
     public partial class MIDForm : Form
     {
-        public event EventHandler DangXuat;
-
         public MIDForm()
         {
             InitializeComponent();
@@ -21,7 +19,9 @@ namespace Motel_Managerment_Client
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DangXuat(this, new EventArgs());
+            this.Hide();
+            FormLogin f = new FormLogin();
+            f.Show();
         }
 
         private void thôngTinChủNhàToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,6 +56,27 @@ namespace Motel_Managerment_Client
         {
             this.Hide();
             FormLapHopDong frm = new FormLapHopDong();
+            frm.Show();
+        }
+
+        private void lậpHóaĐơnThanhToánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLapHoaDon frm = new FormLapHoaDon();
+            frm.Show();
+        }
+
+        private void dịchVụChoThuêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormDichVu frm = new FormDichVu();
+            frm.Show();
+        }
+
+        private void tìnhTrạngThanhToánHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormTinhTrangPhongTro frm = new FormTinhTrangPhongTro();
             frm.Show();
         }
     }
